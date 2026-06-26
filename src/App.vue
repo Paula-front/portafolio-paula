@@ -5,6 +5,7 @@ import HeroSection from './components/sections/HeroSection.vue'
 import AboutSection from './components/sections/AboutSection.vue'
 import SkillsSection from './components/sections/SkillsSection.vue'
 import ProjectsSection from './components/sections/ProjectsSection.vue'
+import LaboratorySection from './components/sections/LaboratorySection.vue'
 import ContactSection from './components/sections/ContactSection.vue'
 </script>
 
@@ -16,6 +17,7 @@ import ContactSection from './components/sections/ContactSection.vue'
     <AboutSection />
     <SkillsSection />
     <ProjectsSection />
+    <LaboratorySection />
     <ContactSection />
   </main>
 
