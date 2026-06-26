@@ -10,6 +10,11 @@ export const skills = [
     description: 'Estilos, layouts, responsive design y diseño visual.'
   },
   {
+  name: 'Sass / SCSS',
+  icon: 'logos:sass',
+  description: 'Preprocesador CSS para crear estilos reutilizables mediante variables, mixins y una mejor organización del código.'
+},
+  {
     name: 'JavaScript',
     icon: 'logos:javascript',
     description: 'Interactividad, lógica, consumo de datos y manipulación del DOM.'
@@ -59,6 +64,11 @@ export const skills = [
     icon: 'mdi:github',
     description: 'Publicación de repositorios y documentación de proyectos.'
   },
+  {
+  name: 'VS Code',
+  icon: 'logos:visual-studio-code',
+  description: 'Editor de código principal utilizado para desarrollar, depurar y organizar proyectos Front-End.'
+},
   {
     name: 'Vercel',
     icon: 'simple-icons:vercel',
