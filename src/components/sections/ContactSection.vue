@@ -1,18 +1,26 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 const contactEmail = 'tu-correo@email.com'
 
 const form = ref({
   name: '',
   email: '',
-  phone: '',
   subject: '',
   message: ''
 })
 
 const errors = ref({})
-const successMessage = ref('')
+const isSubmitted = ref(false)
+
+const isFormValid = computed(() => {
+  return (
+    form.value.name.trim() &&
+    form.value.email.trim() &&
+    form.value.subject.trim() &&
+    form.value.message.trim()
+  )
+})
 
 const validateForm = () => {
   errors.value = {}
@@ -39,73 +47,75 @@ const validateForm = () => {
 }
 
 const handleSubmit = () => {
-  successMessage.value = ''
+  isSubmitted.value = false
 
   if (!validateForm()) return
 
-  const emailSubject = encodeURIComponent(form.value.subject)
+  const subject = encodeURIComponent(form.value.subject)
 
-  const emailBody = encodeURIComponent(`
+  const body = encodeURIComponent(`
 Hola Paula,
 
 Te contacto desde tu portafolio web.
 
 Nombre: ${form.value.name}
 Correo: ${form.value.email}
-Teléfono: ${form.value.phone || 'No informado'}
 
 Mensaje:
 ${form.value.message}
   `)
 
-  window.location.href = `mailto:${contactEmail}?subject=${emailSubject}&body=${emailBody}`
+  window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`
 
-  successMessage.value =
-    'Se abrirá tu aplicación de correo para enviar el mensaje.'
+  isSubmitted.value = true
 }
 </script>
 
 <template>
-  <section id="contacto" class="section contact">
+  <section id="contacto" class="section contact contact--premium">
     <div class="section-header contact__header">
       <p class="section-label">Contacto</p>
-      <h2>Conversemos sobre una idea digital</h2>
+      <h2>¿Trabajamos en una idea digital?</h2>
       <p>
-        Puedes escribirme para revisar mis proyectos, compartir una oportunidad
-        o conversar sobre desarrollo web Front-End.
+        Si tienes una oportunidad, una idea o simplemente quieres conversar sobre
+        desarrollo Front-End, estaré encantada de leerte.
       </p>
     </div>
 
-    <div class="contact__layout">
-      <aside class="contact__info">
-        <article class="contact-info-card">
-          <span>📩</span>
-          <h3>Envíame un mensaje</h3>
-          <p>
-            Completa el formulario y se abrirá tu correo con la información lista
-            para enviar.
-          </p>
-        </article>
+    <div class="contact-premium__layout">
+      <aside class="contact-panel">
+        <div class="contact-panel__icon">📬</div>
 
-        <article class="contact-info-card">
-          <span>💻</span>
-          <h3>También puedes revisar mi GitHub</h3>
-          <p>
-            Ahí encontrarás mis repositorios, proyectos y avances de desarrollo.
-          </p>
+        <h3>Hablemos</h3>
 
+        <p>
+          Completa el formulario y se abrirá tu correo con la información lista
+          para enviar.
+        </p>
+
+        <div class="contact-panel__links">
           <a
             href="https://github.com/Paula-front"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn--secondary"
           >
-            GitHub ↗
+            <span>🐱</span>
+            GitHub
           </a>
-        </article>
+
+          <a href="mailto:tu-correo@email.com">
+            <span>📧</span>
+            Correo
+          </a>
+
+          <span>
+            <span>📍</span>
+            Chile
+          </span>
+        </div>
       </aside>
 
-      <form class="contact__form" @submit.prevent="handleSubmit">
+      <form class="contact-form-premium" @submit.prevent="handleSubmit">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Nombre</label>
@@ -130,27 +140,15 @@ ${form.value.message}
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="phone">Teléfono</label>
-            <input
-              id="phone"
-              v-model="form.phone"
-              type="tel"
-              placeholder="+56 9 1234 5678"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Asunto</label>
-            <input
-              id="subject"
-              v-model="form.subject"
-              type="text"
-              placeholder="Consulta / oportunidad / proyecto"
-            />
-            <small v-if="errors.subject">{{ errors.subject }}</small>
-          </div>
+        <div class="form-group">
+          <label for="subject">Asunto</label>
+          <input
+            id="subject"
+            v-model="form.subject"
+            type="text"
+            placeholder="Consulta / oportunidad / proyecto"
+          />
+          <small v-if="errors.subject">{{ errors.subject }}</small>
         </div>
 
         <div class="form-group">
@@ -159,18 +157,24 @@ ${form.value.message}
             id="message"
             v-model="form.message"
             rows="6"
-            placeholder="Escribe tu mensaje aquí..."
+            placeholder="Cuéntame brevemente en qué puedo ayudarte..."
           ></textarea>
           <small v-if="errors.message">{{ errors.message }}</small>
         </div>
 
-        <button type="submit" class="btn btn--primary contact__submit">
+        <button
+          type="submit"
+          class="btn btn--primary contact-form-premium__button"
+          :class="{ 'contact-form-premium__button--ready': isFormValid }"
+        >
           Enviar mensaje ↗
         </button>
 
-        <p v-if="successMessage" class="contact__success" aria-live="polite">
-          {{ successMessage }}
-        </p>
+        <Transition name="fade">
+          <p v-if="isSubmitted" class="contact-form-premium__success">
+            ✨ Se abrirá tu aplicación de correo para enviar el mensaje.
+          </p>
+        </Transition>
       </form>
     </div>
   </section>

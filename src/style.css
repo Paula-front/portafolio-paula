@@ -1978,3 +1978,552 @@ body::before {
     width: 100%;
   }
 }
+/* =====================================================
+   Laboratorio creativo
+   ===================================================== */
+
+.laboratory {
+  position: relative;
+}
+
+.laboratory__header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.laboratory__showcase {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.laboratory__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.laboratory__arrow {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 232, 240, 0.16);
+  background: rgba(15, 23, 42, 0.72);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 900;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.laboratory__arrow:hover {
+  transform: translateY(-3px);
+  border-color: rgba(250, 204, 21, 0.55);
+  background: rgba(250, 204, 21, 0.12);
+}
+
+.laboratory__counter {
+  color: var(--accent-yellow);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.laboratory-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top right, rgba(251, 113, 133, 0.14), transparent 45%),
+    radial-gradient(circle at bottom left, rgba(34, 211, 238, 0.14), transparent 45%),
+    linear-gradient(180deg, rgba(30, 41, 59, 0.78), rgba(8, 11, 24, 0.96));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
+  transform: rotate(-1deg);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.laboratory-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+  border-color: rgba(251, 113, 133, 0.62);
+  box-shadow: 0 34px 100px rgba(251, 113, 133, 0.15);
+}
+
+.laboratory-card__image {
+  position: relative;
+  min-height: 420px;
+  background: rgba(2, 6, 23, 0.6);
+  overflow: hidden;
+}
+
+.laboratory-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.laboratory-card:hover .laboratory-card__image img {
+  transform: scale(1.04);
+}
+
+.laboratory-card__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, transparent 55%, rgba(8, 11, 24, 0.82)),
+    linear-gradient(to top, rgba(8, 11, 24, 0.72), transparent 55%);
+  pointer-events: none;
+}
+
+.laboratory-card__emoji {
+  position: absolute;
+  left: 1.4rem;
+  top: 1.4rem;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 1.4rem;
+  background: rgba(8, 11, 24, 0.78);
+  border: 1px solid rgba(226, 232, 240, 0.16);
+  font-size: 2rem;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.3);
+}
+
+.laboratory-card__content {
+  padding: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.laboratory-card__label {
+  margin: 0 0 0.7rem;
+  color: var(--accent-yellow);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 900;
+}
+
+.laboratory-card__content h3 {
+  margin: 0 0 1rem;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.laboratory-card__content p {
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.laboratory-card__techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.2rem;
+}
+
+.laboratory-card__techs span {
+  border-radius: 999px;
+  background: rgba(167, 139, 250, 0.16);
+  color: #ede9fe;
+  border: 1px solid rgba(167, 139, 250, 0.16);
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.laboratory-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.laboratory__thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.laboratory-thumb {
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  background: rgba(15, 23, 42, 0.68);
+  color: var(--text-soft);
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 800;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.laboratory-thumb:hover {
+  transform: translateY(-3px);
+  border-color: rgba(250, 204, 21, 0.55);
+}
+
+.laboratory-thumb--active {
+  background: linear-gradient(
+    135deg,
+    var(--accent-coral),
+    var(--accent-lavender)
+  );
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.lab-slide-enter-active,
+.lab-slide-leave-active {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.lab-slide-enter-from {
+  opacity: 0;
+  transform: translateX(24px) rotate(1deg);
+}
+
+.lab-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-24px) rotate(-1deg);
+}
+
+/* Responsive laboratorio */
+
+@media (max-width: 860px) {
+  .laboratory-card {
+    grid-template-columns: 1fr;
+    transform: none;
+  }
+
+  .laboratory-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .laboratory-card__image {
+    min-height: 300px;
+  }
+
+  .laboratory-card__image::after {
+    background: linear-gradient(to top, rgba(8, 11, 24, 0.82), transparent 65%);
+  }
+}
+
+@media (max-width: 520px) {
+  .laboratory-card__image {
+    min-height: 230px;
+  }
+
+  .laboratory-card__links {
+    flex-direction: column;
+  }
+
+  .laboratory__controls {
+    margin-bottom: 1rem;
+  }
+
+  .laboratory-thumb {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* =====================================================
+   Proyectos destacados minimalistas
+   ===================================================== */
+
+.project-card--minimal {
+  min-height: auto;
+}
+
+.project-card--minimal .project-card__image {
+  display: block;
+  height: 260px;
+  cursor: pointer;
+}
+
+.project-card--minimal .project-card__overlay,
+.project-card--minimal .project-card__badge,
+.project-card--minimal .project-card__category,
+.project-card--minimal .project-card__details {
+  display: none;
+}
+
+.project-card--minimal .project-card__body {
+  padding: 1.35rem;
+}
+
+.project-card--minimal .project-card__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.project-card--minimal .project-card__type {
+  margin: 0;
+  color: var(--accent-cyan);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.project-card--minimal h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.project-card--minimal .project-card__short {
+  display: -webkit-box;
+  margin: 0.8rem 0 0;
+  overflow: hidden;
+  color: var(--text-soft);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.project-card--minimal .project-card__techs {
+  margin-top: 1rem;
+  padding-top: 0;
+}
+
+.project-card--minimal .project-card__actions {
+  margin-top: 1rem;
+}
+
+.project-card--minimal:hover .project-card__image img {
+  transform: scale(1.08);
+  filter: brightness(0.88) saturate(1.1);
+}
+
+@media (max-width: 520px) {
+  .project-card--minimal .project-card__image {
+    height: 220px;
+  }
+}
+/* =====================================================
+   Contacto premium
+   ===================================================== */
+
+.contact--premium {
+  text-align: left;
+}
+
+.contact__header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-premium__layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.contact-panel,
+.contact-form-premium {
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(251, 113, 133, 0.14), transparent 45%),
+    radial-gradient(circle at bottom left, rgba(34, 211, 238, 0.12), transparent 45%),
+    linear-gradient(180deg, rgba(30, 41, 59, 0.74), rgba(8, 11, 24, 0.96));
+  border-radius: 1.9rem;
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
+}
+
+.contact-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-panel__icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 1.4rem;
+  background: rgba(251, 113, 133, 0.12);
+  border: 1px solid rgba(251, 113, 133, 0.24);
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-panel h3 {
+  margin: 0 0 0.8rem;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.contact-panel p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.contact-panel__links {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.contact-panel__links a,
+.contact-panel__links span {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  background: rgba(8, 11, 24, 0.58);
+  color: #e2e8f0;
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  font-weight: 800;
+}
+
+.contact-panel__links a {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-panel__links a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(250, 204, 21, 0.55);
+  background: rgba(250, 204, 21, 0.1);
+}
+
+.contact-form-premium {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-premium::before {
+  content: "✦";
+  position: absolute;
+  top: 1.4rem;
+  right: 1.6rem;
+  color: var(--accent-yellow);
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
+.contact-form-premium .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-form-premium .form-group {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form-premium label {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.92rem;
+}
+
+.contact-form-premium input,
+.contact-form-premium textarea {
+  width: 100%;
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  background: rgba(8, 11, 24, 0.72);
+  color: #f8fafc;
+  border-radius: 1rem;
+  padding: 0.95rem 1rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-form-premium textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form-premium input::placeholder,
+.contact-form-premium textarea::placeholder {
+  color: #64748b;
+}
+
+.contact-form-premium input:focus,
+.contact-form-premium textarea:focus {
+  border-color: rgba(251, 113, 133, 0.72);
+  background: rgba(15, 23, 42, 0.88);
+  box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.1);
+}
+
+.contact-form-premium small {
+  color: #fb7185;
+  font-weight: 800;
+}
+
+.contact-form-premium__button {
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.contact-form-premium__button--ready {
+  box-shadow:
+    0 18px 48px rgba(251, 113, 133, 0.4),
+    0 0 0 1px rgba(250, 204, 21, 0.18);
+}
+
+.contact-form-premium__success {
+  margin: 1rem 0 0;
+  color: #bbf7d0;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .contact-premium__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-form-premium .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-premium__button {
+    width: 100%;
+  }
+}
