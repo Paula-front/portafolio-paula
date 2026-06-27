@@ -62,7 +62,7 @@ export const projects = [
     details:
       'Proyecto con una propuesta visual más llamativa, uso de estilos de cerveza, cards con personalidad gráfica y enfoque en diseño de interfaz atractivo.',
     technologies: ['Vue 3', 'API', 'CSS', 'Vercel'],
-    demo: 'https://hop-finder-git-main-paula-front1.vercel.app/',
+    demo: 'https://hop-finder-1.vercel.app',  
     repo: 'https://github.com/Paula-front/hop-finder',
     image: hopFinderImg,
     imagePosition: 'center center',
