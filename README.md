@@ -108,23 +108,40 @@ https://github.com/Paula-front/portafolio-paula
 # 📁 Estructura del Proyecto
 
 ```text
-src
-│
-├── assets
-│
-├── components
-│   ├── layout
-│   ├── sections
-│   └── ui
-│
-├── data
+portafolio-paula
 │
 ├── public
 │   └── captura
+│       ├── hero.png
+│       ├── skills.png
+│       ├── proyectos.png
+│       ├── laboratorio.png
+│       └── contacto.png
 │
-├── App.vue
-├── main.js
-└── style.css
+├── src
+│   ├── assets
+│   │   └── images
+│   │       └── projects
+│   │
+│   ├── components
+│   │   ├── layout
+│   │   ├── sections
+│   │   └── ui
+│   │
+│   ├── data
+│   │   ├── laboratory.js
+│   │   ├── projects.js
+│   │   └── skills.js
+│   │
+│   ├── App.vue
+│   ├── main.js
+│   └── style.css
+│
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
 ```
 
 ---
