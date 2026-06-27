@@ -75,7 +75,7 @@ const selectItem = (item) => {
         <p class="section-label">Sobre mí</p>
 
         <h2>
-          Soy <span>Paula Pérez Valenzuela</span>
+          Mi camino <span>Front-End</span>
         </h2>
 
         <p class="about-v2__role">
@@ -107,8 +107,8 @@ const selectItem = (item) => {
 
         <div class="about-v2__text">
           <p>
-            Soy Front-End Developer Trainee apasionada por seguir aprendiendo y
-            desarrollando proyectos que resuelvan problemas reales. Disfruto
+            Como desarrolladora Front-End Trainee, disfruto seguir aprendiendo y
+            desarrollando proyectos que resuelvan problemas reales. Me gusta
             trabajar con <strong>Vue 3</strong>, <strong>JavaScript</strong> y
             el consumo de <strong>APIs</strong>, cuidando tanto la organización
             del código como la experiencia de usuario.
@@ -117,8 +117,8 @@ const selectItem = (item) => {
           <p>
             Actualmente fortalezco mis habilidades desarrollando proyectos
             personales y explorando nuevas tecnologías, con el objetivo de seguir
-            creciendo como desarrolladora Front-End y crear aplicaciones claras,
-            modernas y bien construidas.
+            creciendo profesionalmente y crear aplicaciones claras, modernas y
+            bien construidas.
           </p>
         </div>
       </div>
