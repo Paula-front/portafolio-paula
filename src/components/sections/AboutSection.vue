@@ -2,41 +2,41 @@
 import { ref } from 'vue'
 
 const activeItem = ref({
-  title: 'Perfil Front-End',
+  title: 'Mi enfoque',
   icon: '💻',
   text:
-    'Estoy construyendo mi camino como desarrolladora Front-End, creando interfaces web responsivas, funcionales y visualmente atractivas con Vue.js, JavaScript, HTML y CSS.',
-  tags: ['Vue 3', 'JavaScript', 'Responsive Design']
+    'Desarrollo interfaces web responsivas, funcionales y visualmente atractivas, cuidando la organización del código y la experiencia de usuario.',
+  tags: ['Vue 3', 'JavaScript', 'UX/UI']
 })
 
 const aboutItems = [
   {
-    title: 'Perfil Front-End',
+    title: 'Mi enfoque',
     icon: '💻',
     text:
-      'Estoy construyendo mi camino como desarrolladora Front-End, creando interfaces web responsivas, funcionales y visualmente atractivas con Vue.js, JavaScript, HTML y CSS.',
-    tags: ['Vue 3', 'JavaScript', 'Responsive Design']
+      'Desarrollo interfaces web responsivas, funcionales y visualmente atractivas, cuidando la organización del código y la experiencia de usuario.',
+    tags: ['Vue 3', 'JavaScript', 'UX/UI']
   },
   {
     title: 'Formación',
     icon: '🎓',
     text:
-      'Actualmente me encuentro fortaleciendo mis habilidades en desarrollo web a través del Bootcamp Front-End Trainee, aplicando buenas prácticas, componentización, consumo de APIs y despliegue de proyectos.',
+      'Actualmente fortalezco mis habilidades en desarrollo Front-End mediante proyectos personales, buenas prácticas, componentización, consumo de APIs y despliegue web.',
     tags: ['Bootcamp', 'Front-End', 'Aprendizaje continuo']
   },
   {
     title: 'Experiencia previa',
     icon: '🧩',
     text:
-      'Mi experiencia en gestión y coordinación de proyectos técnicos me ha permitido desarrollar organización, responsabilidad, análisis de problemas y enfoque práctico para construir soluciones claras.',
+      'Mi experiencia en coordinación de proyectos técnicos me ha permitido desarrollar organización, pensamiento práctico y capacidad para resolver problemas.',
     tags: ['Gestión', 'Organización', 'Resolución de problemas']
   },
   {
-    title: 'Enfoque actual',
+    title: 'Objetivo actual',
     icon: '🚀',
     text:
-      'Me interesa crear productos digitales simples de usar, visualmente cuidados y bien documentados, integrando diseño, lógica e interacción para mejorar la experiencia del usuario.',
-    tags: ['UX/UI', 'Código limpio', 'Deploy online']
+      'Busco seguir creciendo como desarrolladora Front-End, creando aplicaciones claras, modernas y bien construidas.',
+    tags: ['Código limpio', 'Deploy online', 'Mejora continua']
   }
 ]
 
@@ -70,36 +70,25 @@ const selectItem = (item) => {
 
 <template>
   <section id="sobre-mi" class="section about">
-    <div class="section-header">
-      <p class="section-label">Sobre mí</p>
-      <h2>De la organización técnica al desarrollo web</h2>
-      <p>
-        Combino experiencia en coordinación, pensamiento práctico y formación
-        Front-End para construir proyectos digitales claros, funcionales y bien presentados.
-      </p>
-    </div>
+    <div class="about-v2">
+      <div class="about-v2__intro">
+        <p class="section-label">Sobre mí</p>
 
-    <div class="about__grid about__grid--interactive">
-      <div class="about__text">
-        <p>
-          Soy <strong>Paula Pérez Valenzuela</strong>, Front-End Developer Trainee.
-          Mi enfoque está en crear aplicaciones web que no solo funcionen, sino que
-          también sean ordenadas, responsivas y fáciles de utilizar.
+        <h2>
+          Soy <span>Paula Pérez Valenzuela</span>
+        </h2>
+
+        <p class="about-v2__role">
+          Front-End Developer Trainee
         </p>
 
-        <p>
-          Durante mi formación he desarrollado proyectos con Vue 3, JavaScript,
-          consumo de APIs, manejo de rutas, estados globales, documentación y despliegue
-          en plataformas como Vercel.
+        <p class="about-v2__lead">
+          Combino mi experiencia en coordinación de proyectos con mi formación
+          en desarrollo Front-End para crear aplicaciones web funcionales,
+          ordenadas y con una excelente experiencia de usuario.
         </p>
 
-        <p>
-          Mi objetivo es seguir creciendo en la industria TI, aportando compromiso,
-          aprendizaje constante y una mirada organizada para transformar ideas en
-          soluciones digitales.
-        </p>
-
-        <div class="about__highlights">
+        <div class="about-v2__stats">
           <article>
             <strong>4+</strong>
             <span>Proyectos publicados</span>
@@ -115,10 +104,27 @@ const selectItem = (item) => {
             <span>Evidencia de código</span>
           </article>
         </div>
+
+        <div class="about-v2__text">
+          <p>
+            Soy Front-End Developer Trainee apasionada por seguir aprendiendo y
+            desarrollando proyectos que resuelvan problemas reales. Disfruto
+            trabajar con <strong>Vue 3</strong>, <strong>JavaScript</strong> y
+            el consumo de <strong>APIs</strong>, cuidando tanto la organización
+            del código como la experiencia de usuario.
+          </p>
+
+          <p>
+            Actualmente fortalezco mis habilidades desarrollando proyectos
+            personales y explorando nuevas tecnologías, con el objetivo de seguir
+            creciendo como desarrolladora Front-End y crear aplicaciones claras,
+            modernas y bien construidas.
+          </p>
+        </div>
       </div>
 
-      <div class="about__interactive">
-        <div class="about__tabs">
+      <div class="about-v2__interactive">
+        <div class="about-v2__tabs">
           <button
             v-for="item in aboutItems"
             :key="item.title"
