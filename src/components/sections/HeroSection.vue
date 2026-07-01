@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import TextRotator from '../TextRotator.vue'
 
 const activeSkill = ref({
   name: 'Vue 3',
@@ -53,7 +54,9 @@ const selectSkill = (skill) => {
         <span>Paula Pérez Valenzuela</span>
       </h1>
 
-      <h2>Front-End Developer Trainee</h2>
+      <h2>
+  <TextRotator />
+</h2>
 
       <p class="hero__description">
         Diseño y desarrollo aplicaciones web responsivas, funcionales y visualmente
